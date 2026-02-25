@@ -21,31 +21,56 @@ Python 3 — Core application logic
 Slack Bolt — Slack event handling and message posting
 ShipStation API — Real-time carrier rate lookups
 Docker / Docker Compose — Containerized deployment
+
 Project Structure
-├── bot.py                 # Main bot application
-├── Dockerfile             # Container image definition
-├── docker-compose.yml     # Service orchestration
-├── requirements.txt       # Python dependencies
-├── .env                   # Environment variables (not tracked)
-└── .gitignore             # Git ignore rules
+
+   bot.py                 # Main bot application
+   
+   Dockerfile             # Container image definition
+   
+   docker-compose.yml     # Service orchestration
+   
+   requirements.txt       # Python dependencies
+   
+   .env                   # Environment variables (not tracked)
+   
+   .gitignore             # Git ignore rules
+
 
 Environment Variables
+
 Create a .env file in the project root with the following:
+
 SLACK_BOT_TOKEN=xoxb-your-bot-token
+
 SLACK_SIGNING_SECRET=your-signing-secret
+
 SHIPSTATION_API_KEY=your-shipstation-api-key
+
 SHIPSTATION_API_SECRET=your-shipstation-api-secret
+
 PYTHONUNBUFFERED=1
+
 Note: Never commit your .env file. It is excluded via .gitignore.
+
+
 Slack App Configuration
 The bot requires the following OAuth scopes under Bot Token Scopes:
+
 channels:history — Read messages in public channels
+
 channels:read — View basic channel info
+
 chat:write — Post messages
+
 groups:history — Read messages in private channels
+
 usergroups:read — Read user group info
+
 usergroups:write — Mention user groups in messages
+
 After adding scopes, reinstall the app to your workspace.
+
 
 Setup & Deployment
 Clone the repository:
